@@ -32,7 +32,7 @@ const Shipping = ({ cost }: { cost: number }) => {
 
   return (
     <>
-    <div className="p-4 border rounded-lg w-80 shadow-md bg-white">
+    <div className="mx-auto p-4 border rounded-lg w-80 shadow-md bg-white">
       <h3 className="text-lg font-semibold mb-3">Shipping</h3>
       <div className="flex flex-col gap-2">
         {shippingMethods.map((method) => (
