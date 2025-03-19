@@ -1,11 +1,6 @@
 import { useState } from "react";
 import { useShippingMethods } from "../hooks/useShippingMethods";
 
-export type ShippingMethod = {
-  provider: string;
-  label: string;
-};
-
 const Shipping = ({ cost }: { cost: number }) => {
     const [selectedMethod, setSelectedMethod] = useState("standard");
     

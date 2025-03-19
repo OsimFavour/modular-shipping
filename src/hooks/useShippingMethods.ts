@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { ShippingMethod } from "../components/shipping";
+
+export type ShippingMethod = {
+  provider: string;
+  label: string;
+};
 
 export const useShippingMethods = () => {
   const [shippingMethods, setShippingMethods] = useState<ShippingMethod[]>([]);
