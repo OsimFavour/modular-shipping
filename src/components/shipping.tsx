@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { useShippingMethods } from "../hooks/useShippingMethods";
+
 import ShippingMethodList from "./shipping-method-list";
 import OrderSummary from "./order-summary";
 
-const Shipping = ({ cost }: { cost: number }) => {
-  const [selectedMethod, setSelectedMethod] = useState("standard");
+import { useShippingMethods } from "../hooks/useShippingMethods";
+
+
+const Shipping = () => {
+  const [selectedMethod, setSelectedMethod] = useState("Standard");
 
   const { shippingMethods } = useShippingMethods();
 
@@ -20,7 +23,7 @@ const Shipping = ({ cost }: { cost: number }) => {
           />
         </div>
 
-        <OrderSummary selectedMethod={selectedMethod} cost={cost} />
+        <OrderSummary selectedMethod={selectedMethod} shippingMethods={shippingMethods} />
 
         <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg w-full">
           Confirm Shipping

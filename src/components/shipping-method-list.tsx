@@ -3,6 +3,7 @@ import { formatShippingLabel } from "../utils/formatShippingLabel";
 export type ShippingMethod = {
   id: string;
   name: string;
+  amount: string;
 };
 
 type ShippingMethodListProps = {

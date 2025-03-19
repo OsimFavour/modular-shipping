@@ -12,15 +12,7 @@ export const useShippingMethods = () => {
         );
         const data: ShippingMethod[] = await response.json();
         setShippingMethods(data)
-        //     label: `Ship via ${method.name}`,
-        //   })
-        // );
-
-        // formattedMethods.push({
-        //   provider: "standard",
-        //   label: "Standard Shipping",
-        // });
-        // setShippingMethods(formattedMethods);
+        
       } catch (error) {
         console.error("Error fetching shipping methods", error);
       }

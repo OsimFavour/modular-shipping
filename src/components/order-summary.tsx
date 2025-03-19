@@ -1,9 +1,16 @@
+import { ShippingMethod } from "./shipping-method-list";
+
 type OrderSummaryProps = {
   selectedMethod: string;
-  cost: number;
+  shippingMethods: ShippingMethod[]
 };
 
-const OrderSummary = ({ selectedMethod, cost }: OrderSummaryProps) => {
+const OrderSummary = ({ selectedMethod, shippingMethods }: OrderSummaryProps) => {
+  
+  const selectedShipping = shippingMethods.find(
+    (method) => method.name === selectedMethod
+  );
+
   return (
 
     <div className="mt-4 p-3 border rounded-lg bg-gray-100">
@@ -12,10 +19,10 @@ const OrderSummary = ({ selectedMethod, cost }: OrderSummaryProps) => {
         <strong>Selected Shipping:</strong> {selectedMethod}
       </p>
       <p>
-        <strong>Shipping Cost:</strong> ${cost.toFixed(2)}
+        <strong>Shipping Cost:</strong> ${selectedShipping ? selectedShipping.amount : "0.00"}
       </p>
       <p>
-        <strong>Total:</strong> ${cost.toFixed(2)}
+        <strong>Total:</strong> ${selectedShipping ? selectedShipping.amount : "0.00"}
       </p>
     </div>
   );
